@@ -35,7 +35,7 @@ export default function Home() {
         </div>
 
         <div className="text-xl font-semibold mt-4">
-          <p>Contador: {count}</p>
+          <p>Contador dev: {count}</p>
         </div>
 
         <button
