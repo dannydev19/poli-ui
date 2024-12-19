@@ -1,6 +1,13 @@
+"use client"; // Añade esta línea
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => setCount(count + 1);
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -26,6 +33,17 @@ export default function Home() {
         <div>
           [Login with Slack]
         </div>
+
+        <div className="text-xl font-semibold mt-4">
+          <p>Contador: {count}</p>
+        </div>
+
+        <button
+          onClick={increment}
+          className="mt-4 rounded-full border border-solid border-transparent transition-colors bg-foreground text-background h-10 sm:h-12 px-4 sm:px-5 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base"
+        >
+          +
+        </button>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
